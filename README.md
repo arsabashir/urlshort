@@ -1,6 +1,7 @@
 # urlshort
 
 A URL shortener REST API: JWT auth, per-link click analytics, link expiry, rate-limited auth endpoints, Docker setup, automated tests and CI.
+**Live demo:** https://urlshort-upc6.onrender.com/health
 
 **Stack:** Node.js, Express 5, Knex, MySQL or PostgreSQL (production) / SQLite (local + tests), Zod validation, Jest + Supertest, Docker, GitHub Actions.
 
