@@ -1,0 +1,23 @@
+databases:
+  - name: urlshort-db
+    plan: free
+
+services:
+  - type: web
+    name: urlshort
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: node src/server.js
+    healthCheckPath: /health
+    envVars:
+      - key: DB_CLIENT
+        value: pg
+      - key: DATABASE_URL
+        fromDatabase:
+          name: urlshort-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: BASE_URL
+        sync: false
