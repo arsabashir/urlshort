@@ -11,6 +11,8 @@ services:
     startCommand: node src/server.js
     healthCheckPath: /health
     envVars:
+      - key: NODE_VERSION
+        value: "20"
       - key: DB_CLIENT
         value: pg
       - key: DATABASE_URL
